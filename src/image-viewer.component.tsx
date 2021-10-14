@@ -321,6 +321,7 @@ export default class ImageViewer extends React.Component<Props, State> {
     }).start();
 
     const nextIndex = (this.state.currentShowIndex || 0) - 1;
+    this.loadImage(nextIndex);
     DeviceEventEmitter.emit('resetZoom', {});
     this.setState(
       {
@@ -354,6 +355,7 @@ export default class ImageViewer extends React.Component<Props, State> {
     }).start();
 
     const nextIndex = (this.state.currentShowIndex || 0) + 1;
+    this.loadImage(nextIndex);
     DeviceEventEmitter.emit('resetZoom', {});
     this.setState(
       {
